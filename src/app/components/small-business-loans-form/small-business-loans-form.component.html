@@ -4,19 +4,18 @@
       <fieldset>
 
         <div class="range-slider">
-          <input [value]="amountView" (change)="onAmountChange($event)" type="range" [min]="amountMin" [max]="amountMax" [attr.step]="amountStep" formControlName="amount">
+          <input [(ngModel)]="amountView" type="range" [min]="amountMin" [max]="amountMax" [attr.step]="amountStep" formControlName="amount">
         </div>
-                        
-        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('amount').touched || 
+        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('amount').touched ||
                                               smallBusinessLoansForm.get('amount').dirty) &&
                                               !smallBusinessLoansForm.get('amount').valid }">
           <label for="amountId">How much money do you need?</label>
           <div class="input-icon">
             <i>$</i>
-            <input [value]="amountView" (input)="onAmountChange($event)" class="form-control" id="amountId" type="number" formControlName="amount" />
+            <input [(ngModel)]="amountView" class="form-control" id="amountId" type="number" formControlName="amount" />
           </div>
-          <span class="help-block" *ngIf="(smallBusinessLoansForm.get('amount').touched || 
-                                                         smallBusinessLoansForm.get('amount').dirty) && 
+          <span class="help-block" *ngIf="(smallBusinessLoansForm.get('amount').touched ||
+                                                         smallBusinessLoansForm.get('amount').dirty) &&
                                                          smallBusinessLoansForm.get('amount').errors">
                             <span *ngIf="smallBusinessLoansForm.get('amount').errors.required">
                                 Please set an amount.
@@ -30,7 +29,7 @@
           </span>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('months').touched || 
+        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('months').touched ||
                                               smallBusinessLoansForm.get('months').dirty) &&
                                               !smallBusinessLoansForm.get('months').valid }">
           <label for="monthsId">How long do you want the loan for (in months)</label>
@@ -40,21 +39,21 @@
             <button
               *ngFor="let month of monthOptions"
               [ngClass]="{'btn-default': month.amount !== smallBusinessLoansForm.value.months, 'btn-primary': month.amount === smallBusinessLoansForm.value.months}"
-               type="button" 
-               class="btn btn-md" 
+               type="button"
+               class="btn btn-md"
                (click)="onMonthSelect(month.amount)">
                   {{month.amount}}
-               </button>            
+               </button>
           </div>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('fullName').touched || 
+        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('fullName').touched ||
                                               smallBusinessLoansForm.get('fullName').dirty) &&
                                               !smallBusinessLoansForm.get('fullName').valid }">
           <label for="fullNameId">Full Name</label>
           <input class="form-control" id="fullNameId" type="text" placeholder="Full Name" formControlName="fullName" />
-          <span class="help-block" *ngIf="(smallBusinessLoansForm.get('fullName').touched || 
-                                                         smallBusinessLoansForm.get('fullName').dirty) && 
+          <span class="help-block" *ngIf="(smallBusinessLoansForm.get('fullName').touched ||
+                                                         smallBusinessLoansForm.get('fullName').dirty) &&
                                                          smallBusinessLoansForm.get('fullName').errors">
                             <span *ngIf="smallBusinessLoansForm.get('fullName').errors.required">
                                 Please enter your full name.
@@ -62,13 +61,13 @@
           </span>
         </div>
 
-        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('email').touched || 
+        <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('email').touched ||
                                               smallBusinessLoansForm.get('email').dirty) &&
                                               !smallBusinessLoansForm.get('email').valid }">
           <label for="emailId">Email</label>
           <input class="form-control" id="emailId" type="text" placeholder="Email" formControlName="email" />
-          <span class="help-block" *ngIf="(smallBusinessLoansForm.get('email').touched || 
-                                                         smallBusinessLoansForm.get('email').dirty) && 
+          <span class="help-block" *ngIf="(smallBusinessLoansForm.get('email').touched ||
+                                                         smallBusinessLoansForm.get('email').dirty) &&
                                                          smallBusinessLoansForm.get('email').errors">
                             <span *ngIf="smallBusinessLoansForm.get('email').errors.required">
                                 Please enter your email.

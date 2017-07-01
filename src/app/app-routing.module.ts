@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SmallBusinessLoansViewComponent } from './views/small-business-loans-view/small-business-loans-view.component';
 import { RouteErrorComponent } from './components/route-error/route-error.component';
-import { RatesTermsResolverService } from "app/services/rates-terms-resolver.service";
+import { RatesTermsResolverService } from 'app/services/rates-terms-resolver.service';
 
 const routes: Routes = [
   {

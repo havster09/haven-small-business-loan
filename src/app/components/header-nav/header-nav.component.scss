@@ -1,0 +1,15 @@
+.navbar-default {
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.62));
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 0;
+  .navbar-header {
+    img {
+      max-width: 110px;
+    }
+    .navbar-brand {
+      color: #FFF;
+      text-transform: uppercase;
+    }
+  }
+}
+

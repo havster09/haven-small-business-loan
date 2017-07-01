@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'ArialMT';
+  src: url('/assets/fonts/ArialMT.eot');
+  src: url('/assets/fonts/ArialMT.eot?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/ArialMT.woff2') format('woff2'),
+  url('/assets/fonts/ArialMT.woff') format('woff'),
+  url('/assets/fonts/ArialMT.ttf') format('truetype'),
+  url('/assets/fonts/ArialMT.svg#ArialMT') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+$font-family-prospa:  'ArialMT', san-serif;
+$brand-primary: #8bc34a !default;
+
+$link-color: $brand-primary !default;

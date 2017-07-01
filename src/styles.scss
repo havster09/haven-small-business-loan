@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import './shared/styles/_variables';
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  font-family: $font-family-prospa;
+}
+
