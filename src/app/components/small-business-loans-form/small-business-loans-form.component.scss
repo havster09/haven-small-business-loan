@@ -1,0 +1,28 @@
+form {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    .input-icon {
+    position: relative;
+        i {
+            position: absolute;
+            display: block;
+            transform: translate(0, -50%);
+            top: 50%;
+            pointer-events: none;
+            width: 25px;
+            text-align: center;
+            font-style: normal;
+        }
+        input {
+            padding-left: 25px;
+            padding-right: 0;
+        }
+    }
+}
+
+
+
+

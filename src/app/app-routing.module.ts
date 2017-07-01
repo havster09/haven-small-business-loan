@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: 'small-business-loans',
     component: SmallBusinessLoansViewComponent,
-    // resolve: {ratesterms: RatesTermsResolverService}
+    resolve: {ratesterms: RatesTermsResolverService}
   },
   { path: '', redirectTo: '/small-business-loans', pathMatch: 'full'},
   { path: '**', component: RouteErrorComponent }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IRatesTerms } from "app/models/rates-terms";
 
 @Component({
   selector: 'app-small-business-loans-view',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./small-business-loans-view.component.scss']
 })
 export class SmallBusinessLoansViewComponent implements OnInit {
-
-  constructor() { }
+  ratesTerms: IRatesTerms;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.ratesTerms = this.route.snapshot.data['ratesterms'];
   }
 
 }

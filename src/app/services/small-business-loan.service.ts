@@ -16,7 +16,6 @@ export class SmallBusinessLoanService {
     constructor(private http: Http) { }
 
     getRatesTerms(): Observable<IRatesTerms[]> {
-      debugger;
         return this.http.get(this.baseUrl)
             .map(this.extractData)
             .do(data => console.log('getRatesTerms: ' + JSON.stringify(data)))
@@ -37,8 +36,7 @@ export class SmallBusinessLoanService {
     }
 
     private extractData(response: Response) {
-        let body = response.json();
-        return body.data || {};
+        return response.json();
     }
 
     private handleError(error: Response): Observable<any> {

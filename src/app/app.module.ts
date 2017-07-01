@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'
@@ -10,7 +12,6 @@ import { RouteErrorComponent } from './components/route-error/route-error.compon
 import { SmallBusinessLoanService } from "app/services/small-business-loan.service";
 import { RatesTermsResolverService } from './services/rates-terms-resolver.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,8 @@ import { RatesTermsResolverService } from './services/rates-terms-resolver.servi
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [
