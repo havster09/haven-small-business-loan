@@ -10,6 +10,11 @@ import { IMonthOption } from "app/models/month-option";
 export class SmallBusinessLoansFormComponent implements OnInit {
   smallBusinessLoansForm: FormGroup;
   monthOptions: IMonthOption[];
+  amountMin:number = 5000;
+  amountStep:number = 5000;
+  amountMax:number = 250000;
+
+  amountView:number = this.amountMin;
 
   private validationMessages = {
     required: 'required',
@@ -49,8 +54,14 @@ export class SmallBusinessLoansFormComponent implements OnInit {
     });
   }
 
-  onMonthSelect(amount) {
-    this.smallBusinessLoansForm.value.months = amount;
+  onMonthSelect(months) {
+    this.smallBusinessLoansForm.patchValue({
+            months
+        });
+  }
+  
+  onAmountChange(event) {
+    this.amountView = event.target.value;
   }
 
   smallBusinessLoansFormSubmit(): void {

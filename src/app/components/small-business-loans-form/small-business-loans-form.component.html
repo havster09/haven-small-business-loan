@@ -2,13 +2,18 @@
   <div class="panel-body">
     <form novalidate (ngSubmit)="smallBusinessLoansFormSubmit()" [formGroup]="smallBusinessLoansForm">
       <fieldset>
+
+        <div class="range-slider">
+          <input [value]="amountView" (change)="onAmountChange($event)" type="range" [min]="amountMin" [max]="amountMax" [attr.step]="amountStep" formControlName="amount">
+        </div>
+                        
         <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('amount').touched || 
                                               smallBusinessLoansForm.get('amount').dirty) &&
                                               !smallBusinessLoansForm.get('amount').valid }">
           <label for="amountId">How much money do you need?</label>
           <div class="input-icon">
             <i>$</i>
-            <input class="form-control" id="amountId" type="number" formControlName="amount" />
+            <input [value]="amountView" (input)="onAmountChange($event)" class="form-control" id="amountId" type="number" formControlName="amount" />
           </div>
           <span class="help-block" *ngIf="(smallBusinessLoansForm.get('amount').touched || 
                                                          smallBusinessLoansForm.get('amount').dirty) && 
@@ -89,7 +94,6 @@
     </form>
   </div>
 </div>
-
 <br>Dirty: {{ smallBusinessLoansForm.dirty }}
 <br>Touched: {{ smallBusinessLoansForm.touched }}
 <br>Valid: {{ smallBusinessLoansForm.valid }}
