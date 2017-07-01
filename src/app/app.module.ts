@@ -6,8 +6,9 @@ import { AppComponent } from './app.component'
 
 import { SmallBusinessLoansViewComponent } from './views/small-business-loans-view/small-business-loans-view.component';
 import { SmallBusinessLoansFormComponent } from './components/small-business-loans-form/small-business-loans-form.component';
-import { InterestRateService } from './services/interest-rate.service';
 import { RouteErrorComponent } from './components/route-error/route-error.component';
+import { SmallBusinessLoanService } from "app/services/small-business-loan.service";
+import { RatesTermsResolverService } from './services/rates-terms-resolver.service';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { RouteErrorComponent } from './components/route-error/route-error.compon
     AppRoutingModule
   ],
   providers: [
-    InterestRateService
+    SmallBusinessLoanService,
+    RatesTermsResolverService
   ],
   bootstrap: [AppComponent]
 })
