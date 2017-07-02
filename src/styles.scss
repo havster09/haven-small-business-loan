@@ -3,7 +3,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 body {
-  font-family: $font-family-prospa;
+  // custom downloaded font is not rendering properly on my ubuntu chrome disabled on http://www.havenramos.com/prospa/
+  // font-family: $font-family-prospa;
 }
 
 h1,h2 {
