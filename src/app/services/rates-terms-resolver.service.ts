@@ -6,8 +6,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 
-import { SmallBusinessLoanService } from "app/services/small-business-loan.service";
-import { IRatesTerms } from "app/models/rates-terms";
+import { SmallBusinessLoanService } from 'app/services/small-business-loan.service';
+import { IRatesTerms } from 'app/models/rates-terms';
 
 @Injectable()
 export class RatesTermsResolverService implements Resolve<IRatesTerms> {

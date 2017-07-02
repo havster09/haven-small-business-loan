@@ -12,6 +12,7 @@ import { RouteErrorComponent } from './components/route-error/route-error.compon
 import { SmallBusinessLoanService } from 'app/services/small-business-loan.service';
 import { RatesTermsResolverService } from './services/rates-terms-resolver.service';
 import { HeaderNavComponent } from './components/header-nav/header-nav.component';
+import { AudPipe } from './pipes/aud.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderNavComponent } from './components/header-nav/header-nav.component
     SmallBusinessLoansViewComponent,
     SmallBusinessLoansFormComponent,
     RouteErrorComponent,
-    HeaderNavComponent
+    HeaderNavComponent,
+    AudPipe
   ],
   imports: [
     BrowserModule,

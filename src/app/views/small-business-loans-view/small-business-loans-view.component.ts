@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IRatesTerms } from "app/models/rates-terms";
+import { IRatesTerms } from 'app/models/rates-terms';
 
 @Component({
   selector: 'app-small-business-loans-view',

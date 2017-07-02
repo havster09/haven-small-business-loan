@@ -1,32 +1,79 @@
-form {
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+@import '../../../shared/styles/_variables';
+
+p,label,h1,h2,span {
+  color: $brand-grey;
+}
+
+.btn-prospa {
+  border-radius: 40px;
+  text-transform: uppercase;
+  min-width: 160px;
+  height:40px;
+}
+
+.sbl-block {
+  max-width: 470px;
+  border-radius: 2px;
+  margin: 20px 0;
+  .sbl-block__form-container {
+    background-color: $brand-light-grey;
+    form {
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .input-icon {
+        position: relative;
+        i {
+          position: absolute;
+          display: block;
+          transform: translate(0, -50%);
+          top: 50%;
+          pointer-events: none;
+          width: 25px;
+          text-align: center;
+          font-style: normal;
+        }
+        input {
+          padding-left: 25px;
+          padding-right: 0;
+        }
+      }
+    }
   }
-  .input-icon {
-    position: relative;
-    i {
-      position: absolute;
-      display: block;
-      transform: translate(0, -50%);
-      top: 50%;
-      pointer-events: none;
-      width: 25px;
-      text-align: center;
-      font-style: normal;
+}
+.sbl-details-block {
+  background-color: $brand-white;
+  border: 1px solid #ccc;
+  .sbl-details-block__list {
+    display: flex;
+    justify-content: space-around;
+    li {
+      width:50%;
+      display: flex;
+      flex-direction: column;text-align: center;
+      font-weight: bold;
     }
-    input {
-      padding-left: 25px;
-      padding-right: 0;
-    }
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+.amount-range {
+  .amount-range__list {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
 .range-slider {
-  margin:.1em 0;
+  margin: .1em 0;
   input[type=range] {
+    height: 37px;
+    background-color: $brand-light-grey;
     -webkit-appearance: none;
+    margin: 10px 0;
     width: 100%;
   }
   input[type=range]:focus {
@@ -36,22 +83,68 @@ form {
     width: 100%;
     height: 12px;
     cursor: pointer;
-    background: #5b666d;
-    border-radius: 6px;
-    border: 1px solid #010101;
+    background: $brand-slider-grey;
+    border-radius: 5px;
   }
   input[type=range]::-webkit-slider-thumb {
-    border: 2px solid #5b666d;
+    border: 2px solid $brand-grey;
     height: 30px;
     width: 30px;
     border-radius: 30px;
-    background: #ffffff;
+    background: $brand-white;
     cursor: pointer;
     -webkit-appearance: none;
-    margin-top: -9.2px;
-    &::before {
-      content: "$"
-    }
+    margin-top: -9.5px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: $brand-slider-grey;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    background: $brand-slider-grey;
+    border-radius: 5px;
+
+  }
+  input[type=range]::-moz-range-thumb {
+    border: 2px solid $brand-grey;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: $brand-white;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: $brand-slider-grey;
+    border-radius: 10px;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: $brand-slider-grey;
+    border-radius: 10px;
+  }
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    border: 1px solid $brand-grey;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    background: $brand-white;
+    cursor: pointer;
+  }
+  output {
+    position: absolute;
+    pointer-events: none;
+    margin-top: -45px;
+    padding: .5em;
   }
 }
 

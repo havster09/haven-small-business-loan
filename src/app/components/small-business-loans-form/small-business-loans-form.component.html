@@ -1,10 +1,15 @@
-<div class="panel panel-default">
-  <div class="panel-body">
+<div class="panel panel-default sbl-block">
+  <div class="panel-body sbl-block__form-container">
     <form novalidate (ngSubmit)="smallBusinessLoansFormSubmit()" [formGroup]="smallBusinessLoansForm">
       <fieldset>
 
         <div class="range-slider">
-          <input [(ngModel)]="amountView" type="range" [min]="amountMin" [max]="amountMax" [attr.step]="amountStep" formControlName="amount">
+          <input name="amount" [ngModel]="amountView" (ngModelChange)="amountView=$event" type="range" [min]="amountMin" [max]="amountMax" [attr.step]="amountStep" formControlName="amount"/>
+          <div class="amount-range">
+            <ul class="list-unstyled amount-range__list">
+              <li *ngFor="let rangeOption of rangeOptions">{{rangeOption.amount | aud}}</li>
+            </ul>
+          </div>
         </div>
         <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('amount').touched ||
                                               smallBusinessLoansForm.get('amount').dirty) &&
@@ -12,7 +17,7 @@
           <label for="amountId">How much money do you need?</label>
           <div class="input-icon">
             <i>$</i>
-            <input [(ngModel)]="amountView" class="form-control" id="amountId" type="number" formControlName="amount" />
+            <input [(ngModel)]="amountView" (ngModelChange)="calculateRepayments()" class="form-control" id="amountId" type="number" formControlName="amount" />
           </div>
           <span class="help-block" *ngIf="(smallBusinessLoansForm.get('amount').touched ||
                                                          smallBusinessLoansForm.get('amount').dirty) &&
@@ -45,6 +50,22 @@
                   {{month.amount}}
                </button>
           </div>
+        </div>
+
+        <div class="well sbl-details-block">
+          <p>{{amountView | aud}} over {{smallBusinessLoansForm.value.months}} months will approximately equate to:</p>
+          <ul class="list-unstyled sbl-details-block__list">
+            <li>
+              <div>{{repaymentCount}}</div>
+              <div>daily repayments</div>
+            </li>
+            <li>
+              <div>{{'$' + repaymentAmount}}</div>
+              <div>per day</div>
+            </li>
+          </ul>
+          <p class="small">When we calculate your exact rate, we take into account a number of factors including our assessment on the strength of your business. This calculation is an estimate only. Conditions apply to all loan options and to full or partial repayments. Fees and charges also apply and are subject to change. Applications are subject to approval and full terms and conditions will be in the loan offer.</p>
+          <p class="small"><a href="">Connect your bank statements</a> for a more accurate result</p>
         </div>
 
         <div class="form-group" [ngClass]="{'has-error': (smallBusinessLoansForm.get('fullName').touched ||
@@ -81,7 +102,7 @@
         <div class="form-group">
           <div>
             <span>
-                            <button class="btn btn-primary"
+                            <button class="btn btn-primary pull-right btn-prospa"
                                     type="submit"
                                     [disabled]="!smallBusinessLoansForm.valid">
                                 Submit
@@ -93,7 +114,3 @@
     </form>
   </div>
 </div>
-<br>Dirty: {{ smallBusinessLoansForm.dirty }}
-<br>Touched: {{ smallBusinessLoansForm.touched }}
-<br>Valid: {{ smallBusinessLoansForm.valid }}
-<br>Value: {{ smallBusinessLoansForm.value | json }}
