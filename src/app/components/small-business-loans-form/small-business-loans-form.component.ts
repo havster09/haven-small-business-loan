@@ -89,7 +89,7 @@ export class SmallBusinessLoansFormComponent implements OnInit, OnChanges {
     const selectedRateTerm = this.rateTerms.find(rateTerm => rateTerm.duration === this.smallBusinessLoansForm.value.months);
     this.repaymentCount = selectedRateTerm.duration * 30;
     this.repaymentAmount = Math.ceil(this.smallBusinessLoansForm.value.amount
-      * (1 + selectedRateTerm.rate / 100) / (selectedRateTerm.duration * 30));
+      * (1 + selectedRateTerm.rate / 100) / this.repaymentCount);
   }
 
   smallBusinessLoansFormSubmit(): void {
