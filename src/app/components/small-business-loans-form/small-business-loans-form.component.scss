@@ -60,8 +60,15 @@ p,label,h1,h2,span {
     text-decoration: underline;
   }
 }
-.amount-range {
-  .amount-range__list {
+.month-select-block {
+  display: flex;
+  justify-content: space-around;
+  .btn {
+    flex-grow:1
+  }
+}
+.amount-range-block {
+  .amount-range-block__list {
     display: flex;
     justify-content: space-between;
   }

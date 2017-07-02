@@ -5,8 +5,8 @@
 
         <div class="range-slider">
           <input name="amount" [ngModel]="amountView" (ngModelChange)="amountView=$event" type="range" [min]="amountMin" [max]="amountMax" [attr.step]="amountStep" formControlName="amount"/>
-          <div class="amount-range">
-            <ul class="list-unstyled amount-range__list">
+          <div class="amount-range-block">
+            <ul class="list-unstyled amount-range-block__list">
               <li *ngFor="let rangeOption of rangeOptions">{{rangeOption.amount | aud}}</li>
             </ul>
           </div>
@@ -40,7 +40,7 @@
           <label for="monthsId">How long do you want the loan for (in months)</label>
           <input class="form-control" id="monthsId" type="hidden" placeholder="Month" formControlName="months" />
           <div class="row"></div>
-          <div class="btn-group">
+          <div class="btn-group month-select-block">
             <button
               *ngFor="let month of monthOptions"
               [ngClass]="{'btn-default': month.amount !== smallBusinessLoansForm.value.months, 'btn-primary': month.amount === smallBusinessLoansForm.value.months}"
