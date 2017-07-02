@@ -1,0 +1,7 @@
+@import '../../../shared/styles/_variables';
+
+@media (max-width: $max-mobile-potrait) {
+  h1 {
+    font-size: 18px;
+  }
+}
