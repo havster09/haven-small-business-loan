@@ -155,6 +155,25 @@ p,label,h1,h2,span {
   }
 }
 
+@media (max-width: $max-mobile-potrait) {
+  .amount-range-block {
+    .amount-range-block__list {
+      li {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .month-select-block {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .btn {
+      flex-grow: 0;
+      border-radius: 0;
+    }
+  }
+}
+
 
 
 

@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { SmallBusinessLoansViewComponent } from './views/small-business-loans-view/small-business-loans-view.component';
-import { RouteErrorComponent } from './components/route-error/route-error.component';
-import { RatesTermsResolverService } from 'app/services/rates-terms-resolver.service';
+import {SmallBusinessLoansViewComponent} from './views/small-business-loans-view/small-business-loans-view.component';
+import {RouteErrorComponent} from './components/route-error/route-error.component';
+import {RatesTermsResolverService} from 'app/services/rates-terms-resolver.service';
 
 const routes: Routes = [
   {
@@ -11,12 +11,17 @@ const routes: Routes = [
     component: SmallBusinessLoansViewComponent,
     resolve: {ratesterms: RatesTermsResolverService}
   },
-  { path: '', redirectTo: '/small-business-loans', pathMatch: 'full'},
-  { path: '**', component: RouteErrorComponent }
+  {
+    path: '',
+    component: SmallBusinessLoansViewComponent,
+    resolve: {ratesterms: RatesTermsResolverService}
+  },
+  {path: '**', component: RouteErrorComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
